@@ -43,13 +43,14 @@ TDATA Map<TDATA>(object oldObject) where TDATA : new()
 
     try
     {
-        // Get the type of the new object and the type of the old object passed in
-        Type newObjType = typeof(TDATA);
-        Type oldObjType = oldObject.GetType();
 
         // If the old object is null, just return the new object
         if (oldObject == null)
             return newObject;
+
+        // Get the type of the new object and the type of the old object passed in
+        Type newObjType = typeof(TDATA);
+        Type oldObjType = oldObject.GetType();
 
         // Get a list of all the properties in the new object
         var propertyList = newObjType.GetProperties();
